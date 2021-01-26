@@ -1,0 +1,23 @@
+name: bootstrap.paragraph;
+
+<style scoped>
+    span {
+        margin: 1px;
+        overflow: hidden;
+    }
+
+    [contenteditable][placeholder]:empty:before {
+        content: attr(placeholder);
+        color: gray;
+        background-color: transparent;
+        cursor: text;
+    }
+
+    div {
+        height: 100%;
+        width: 100%;
+        resize: none;
+    }
+</style>
+
+<div contenteditable="[editable]">[text]</div>

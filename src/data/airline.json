@@ -1,0 +1,28 @@
+[
+  {
+    "airline": "delta",
+    "from": "YYZ",
+    "to": "JFK",
+    "flights": [
+      {
+        "from": "YYZ",
+        "to": "ORD",
+        "hours": 2,
+        "ancillaries": [
+          {
+            "wifi": "$1"
+          }
+        ]
+      },
+      {
+        "from": "ORD",
+        "to": "JFK",
+        "hours": 1,
+        "seatmap": [
+          []
+        ]
+        // ancillary may be added run-time, the UI should be mapped for the key "ancillaries"
+      }
+    ]
+  }
+]

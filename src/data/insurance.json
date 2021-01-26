@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "question": "what your business do?",
+    "showIf": "state is AL"
+  },
+  {
+    "id": "2",
+    "question": "what your business do?",
+    "showIf": "state is AL"
+  },
+  {
+    "id": "3",
+    "question": "what your business do?",
+    "showIf": "state is AL"
+  }
+]
+
+// save every user changes or as coded interval
+// update database as well trigger change event (like kafka) for other algos to do processing

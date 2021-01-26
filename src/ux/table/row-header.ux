@@ -1,0 +1,5 @@
+name: bootstrap.table.row-header;
+
+<th scope="row">[value]
+    <items/>
+</th>

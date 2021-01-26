@@ -1,0 +1,5 @@
+name: squid.table.cell;
+
+<td colspan="[colspan]" rowspan="[rowspan]">[value]
+    <items/>
+</td>

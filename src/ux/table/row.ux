@@ -1,0 +1,8 @@
+name: squid.table.row;
+
+<tr>
+    <items/>
+    <td class="row-expand">
+        <div></div>
+    </td>
+</tr>

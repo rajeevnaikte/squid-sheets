@@ -1,0 +1,12 @@
+.bordered-table th:not(.row-expand) {
+    border: 2px solid black;
+}
+
+.bordered-table td:not(.row-expand) {
+    border: 1px solid lightgray;
+}
+
+.bordered-table th:not(.row-expand),
+.bordered-table td:not(.row-expand) {
+    padding: 5px;
+}

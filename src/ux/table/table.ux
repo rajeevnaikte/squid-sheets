@@ -1,0 +1,100 @@
+name: squid.table.table;
+
+<style>
+    .column-expand {
+        top: 0px;
+        right: 0px;
+        width: 5px;
+        position: absolute;
+        cursor: col-resize;
+        user-select: none;
+    }
+
+    th {
+        position: relative;
+    }
+
+    .row-expand div {
+        bottom: 0px;
+        right: 0px;
+        height: 5px;
+        position: absolute;
+        cursor: row-resize;
+        user-select: none;
+    }
+
+    .row-expand {
+        position: relative;
+    }
+</style>
+
+<table>
+    <thead>
+    <items items-for="columns"/>
+    <th class="row-expand">
+        <div></div>
+    </th>
+    </thead>
+    <tbody>
+    <items items-for="rows"/>
+    </tbody>
+</table>
+
+<script>
+  // Reset height of the column expand handle div to be equal to table height.
+  const tableEl = this;
+  let columnExpandUpdateQueued = false;
+
+  const updateExpandHandleDimensions = () => {
+    for (const expandHandleEl of tableEl.getElementsByClassName('column-expand') || []) {
+      expandHandleEl.style.height = `${tableEl.clientHeight}px`;
+    }
+    for (const expandHandleEl of tableEl.querySelectorAll('.row-expand div') || []) {
+      expandHandleEl.style.width = `${tableEl.clientWidth}px`;
+    }
+    columnExpandUpdateQueued = false;
+  }
+
+  const updateColumnExpandHandleHeight = () => {
+    if (columnExpandUpdateQueued) return;
+    columnExpandUpdateQueued = true;
+    setTimeout(updateExpandHandleDimensions, 0);
+  }
+  tableEl.addEventListener('DOMNodeInserted', updateColumnExpandHandleHeight);
+  tableEl.addEventListener('DOMNodeRemoved', updateColumnExpandHandleHeight);
+
+  // Change column width as mouse drag on the expand handle div.
+  let pageX, curCellWidth, pageY, currCell, currCellHeight;
+
+  tableEl.addEventListener('mousedown', (e) => {
+    currCell = e.target.parentElement;
+    if (currCell.className.includes('row-expand')) {
+      pageY = e.pageY;
+      currCellHeight = currCell.offsetHeight;
+    } else {
+      pageX = e.pageX;
+      curCellWidth = currCell.offsetWidth;
+    }
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (pageX) {
+      const diffX = e.pageX - pageX;
+      currCell.style.width = (curCellWidth + diffX) + 'px';
+    } else if (pageY) {
+      const diffY = e.pageY - pageY;
+      for (const cell of currCell.parentElement.children) {
+        cell.style.height = (currCellHeight + diffY) + 'px';
+      }
+    }
+  });
+
+  document.addEventListener('mouseup', (e) => {
+    pageX = undefined;
+    curCellWidth = undefined;
+    currCell = undefined;
+    pageY = undefined;
+    currCellHeight = undefined;
+    updateExpandHandleDimensions();
+  });
+</script>

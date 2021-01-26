@@ -1,0 +1,7 @@
+name: squid.table.column;
+
+<th colspan="[colspan]" rowspan="[rowspan]" scope="col">
+    [name]
+    <items/>
+    <div class="column-expand"></div>
+</th>

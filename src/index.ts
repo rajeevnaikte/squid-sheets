@@ -1,3 +1,2 @@
-export * from './models/types';
-export * from './exceptions/errors';
-export { setConfigs } from './configurations/configuration';
+import './view/styles.css';
+import './view/sheet';
