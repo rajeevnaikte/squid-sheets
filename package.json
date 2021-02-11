@@ -29,25 +29,25 @@
   },
   "homepage": "https://github.com/rajeevnaikte/node-template#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "lodash": "^4.17.20",
-    "sass": "^1.30.0",
+    "sass": "^1.32.7",
     "sass-loader": "^8.0.2",
     "squid-utils": "^3.0.11",
-    "squid-uxui": "^1.4.18"
+    "squid-uxui": "^1.4.19"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.19",
-    "@types/lodash": "^4.14.165",
+    "@types/jest": "^26.0.20",
+    "@types/lodash": "^4.14.168",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
     "css-loader": "^3.6.0",
-    "eslint": "^7.15.0",
+    "eslint": "^7.19.0",
     "file-loader": "^6.2.0",
     "jest": "^26.6.3",
     "style-loader": "^1.3.0",
-    "ts-jest": "^26.4.4",
+    "ts-jest": "^26.5.1",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
+    "typescript": "^4.1.5"
   }
 }
