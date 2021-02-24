@@ -1,0 +1,20 @@
+name: bootstrap.input.file-reader;
+
+<div class="form-group">
+    <label for="[id]">[text]</label>
+    <input type="file" class="form-control-file" id="[id]">
+</div>
+
+<script>
+    const fileInputEl = this.querySelector('input');
+
+    fileInputEl.onchange = (event) =>
+    {
+      const reader = new FileReader();
+      reader.onload = (fileReadEvent) =>
+      {
+        this.dispatchEvent(new CustomEvent('read', { detail: fileReadEvent.target.result }));
+      }
+      reader.readAsArrayBuffer(event.target.files[0]);
+    };
+</script>

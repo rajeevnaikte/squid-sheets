@@ -1,0 +1,5 @@
+name: bootstrap.grid.column;
+
+<div class="col">
+    <items />
+</div>

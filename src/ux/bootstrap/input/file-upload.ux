@@ -1,0 +1,4 @@
+name: bootstrap.input.file-upload;
+
+<input type="file">[text]
+

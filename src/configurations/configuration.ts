@@ -1,5 +1,6 @@
 import * as defaultConfigs from './configs.json';
-import { JsonType, loadConfigs, Primitive } from 'squid-utils';
+import { JsonType, loadConfigs } from 'squid-utils';
+import { Primitive } from 'type-fest';
 
 export const Config = loadConfigs(defaultConfigs);
 /**
@@ -7,7 +8,8 @@ export const Config = loadConfigs(defaultConfigs);
  * @param configs
  */
 export const setConfigs = (
-  configs: { [key: string]: JsonType | Primitive } | typeof import('./configs.json')
-): void => {
-  loadConfigs(Object.assign(Config, configs));
+	configs: { [key: string]: JsonType | Primitive } | typeof import('./configs.json')
+): void => 
+{
+	loadConfigs(Object.assign(Config, configs));
 };
