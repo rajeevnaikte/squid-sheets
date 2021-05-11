@@ -30,7 +30,7 @@
   "homepage": "https://github.com/rajeevnaikte/node-template#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "sass": "^1.32.8",
     "sass-loader": "^8.0.2",
     "squid-utils": "^3.0.13",
